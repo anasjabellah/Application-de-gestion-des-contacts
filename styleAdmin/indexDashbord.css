@@ -1,0 +1,19 @@
+
+
+.slidarcolor{
+    background-color: var(--gre);
+}
+
+.boxImage{
+    text-align: center;
+    margin-top: 20px;
+}
+
+.list-link{
+    margin-top: 100px;
+}
+
+.icon-list{
+    font-size: 20px;
+    padding-right: 10px;
+}
