@@ -116,6 +116,15 @@ body{
 }
 
 
+
+.btndrow i{
+    font-size: 25px;
+    color: var(--grebl);
+    margin-top: -10px;
+}
+
+
+
 /* cartAdmin */
 
 
@@ -231,6 +240,8 @@ table th,td{
 
 .table-borderless > :not(caption) > * > * {
     padding:   15px 0;
+    vertical-align: middle;
+
 }
 
 .crTabal i{
@@ -241,4 +252,5 @@ table th,td{
 
 .de ,.id , .sh{
     color: var(--grebl);
+    margin-right: 10px;
 }
