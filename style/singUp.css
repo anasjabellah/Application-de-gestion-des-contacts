@@ -2,8 +2,9 @@
 
 .singinBOX{
     width: 70%;
-    height: 550px;
-    margin: 90px auto 0;
+    height: auto;
+    margin: 90px auto 20px;
+    padding: 20px;
     display: flex;
     align-items: center;
     justify-content: center;

@@ -1,3 +1,31 @@
+<?php  
+   include_once '../model/model_SignUp.php';  
+   $user = new Sign();  
+   if ($_SERVER["REQUEST_METHOD"] == "POST"){  
+
+       $register = null;
+        try {
+            $register = $user->register($_REQUEST['first_name'],$_REQUEST['last_name'],$_REQUEST['gmail'],$_REQUEST['password']);  
+        } catch(Exception $e) {
+            $error = 'User already exists';
+        }
+
+      if($register){  
+
+        $error = "Registration Successful!";  
+
+        header("Location: singIn.html");
+      }
+      else
+      {  
+        $error = "SQL error!";  
+      }  
+
+   }  
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,11 +62,21 @@
                 <span> hey!</span>
                 <span> wellcome back</span>
             </div>
-            <form action="">
+            <form  method="POST">
 
                 <div class="inputUser">
-                    <label for="username">user name</label>
-                    <input type="text" name="username" placeholder="user name">
+                    <label for="username">first_name</label>
+                    <input type="text" name="first_name" placeholder="first_name">
+                </div>
+
+                <div class="inputUser">
+                    <label for="username">last_name</label>
+                    <input type="text" name="last_name" placeholder="last_name">
+                </div>
+
+                <div class="inputUser">
+                    <label for="username">gmail</label>
+                    <input type="text" name="gmail" placeholder="gmail">
                 </div>
 
                 <div class="inputPass">         
@@ -48,10 +86,10 @@
 
                 <div class="inputPass">         
                     <label for="password">password verify</label>
-                    <input type="password" name="password" placeholder="password verify">
+                    <input type="password" name="password_verify" placeholder="password verify">
                 </div>
 
-                <input type="button" value="sing in" name="singin" class="singin">
+                <input type="submit" value="sing in" name="singin" class="singin">
 
             </form>
 

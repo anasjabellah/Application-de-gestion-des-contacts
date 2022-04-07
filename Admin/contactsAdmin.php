@@ -141,6 +141,7 @@
     
                                             </thead>
                                             <tbody>
+
                                               <tr>
                                                 <td>Mark</td>
                                                 <td>Otto</td>
@@ -157,33 +158,12 @@
                                                       </ul>
                                                 </td>
                                               </tr>
-
-                                              <tr>
-                                                <td>Mark</td>
-                                                <td>Otto</td>
-                                                <td>mdo</td>
-                                                <td>mdo</td>
-                                                <td>
-                                                    <button type="button" class="btn btndrow" id="dropdownMenuOffset" data-bs-toggle="dropdown" >
-                                                        <i class="bi bi-filter-right"></i>
-                                                      </button>
-                                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuOffset">
-                                                        <li><a class="dropdown-item" href="#"><i class="bi bi-pencil-fill id"></i> edit</a></li>
-                                                        <li><a class="dropdown-item" href="#"><i class="bi bi-trash2-fill de"></i>delet</a></li>
-                                                        <li><a class="dropdown-item" href="#"> <i class="bi bi-eye-fill sh"></i>show</a></li>
-                                                    </ul>
-                                                </td>
-                                              </tr>
                                               
                                             </tbody>
                                         </table>
                                     </div>
                                 </div>
-
-
                             </div>
-
-
 
                             <div class="content-re">
                                 <div class="cartAdmin">
