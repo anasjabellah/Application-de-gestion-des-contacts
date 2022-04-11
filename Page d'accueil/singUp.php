@@ -1,6 +1,7 @@
 <?php  
    include_once '../model/model_SignUp.php';  
    $user = new Sign();  
+   
    if ($_SERVER["REQUEST_METHOD"] == "POST"){  
 
        $register = null;
@@ -14,7 +15,7 @@
 
         $error = "Registration Successful!";  
 
-        header("Location: singIn.html");
+        header("Location: singIn.php");
       }
       else
       {  
@@ -45,8 +46,8 @@
             </div>
             <ul>
                 <li><a href="../index.html">home</a></li>
-                <li><a href="singIn.html">sing in</a></li>
-                <li><a class="btnBoxShadow" href="singUp.html">sing up </a></li>
+                <li><a href="singIn.php">sing in</a></li>
+                <li><a class="btnBoxShadow" href="singUp.php">sing up </a></li>
             </ul>
         </div>
     </nav>
@@ -93,7 +94,7 @@
 
             </form>
 
-            <p class="singup">already have an account <a href="singIn.html">sing in</a> here.</p>
+            <p class="singup">already have an account <a href="singIn.php">sing in</a> here.</p>
         </div>
         
     </div>

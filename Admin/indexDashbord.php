@@ -1,3 +1,23 @@
+<?php  
+   session_start();  
+
+   include_once '../model/model_SignUp.php';  
+
+   $user = new Sign();  
+
+
+   $id = $_SESSION['id'];  
+   if (!$user->session()){  
+      header("location: ../Page d'accueil/singIn.php");  
+   }  
+
+   if (isset($_REQUEST['q'])){  
+      $user->logout();  
+      header("location: ../Page d'accueil/singIn.php"); 
+   }  
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -24,7 +44,7 @@
                 <div class="list-group list-group-flush list-link">
                       
                       <div class="mt-3 d-flex justify-content-center">
-                        <a href="" class="fs-5 text-center me-3 text-decoration-none text-dark ">
+                        <a href="indexDashbord.php" class="fs-5 text-center me-3 text-decoration-none text-dark ">
                             <i class="bi bi-columns-gap icon-list"></i>
                             Home
                         </a>
@@ -45,7 +65,7 @@
                       </div>
 
                       <div class="mt-3 d-flex justify-content-center">
-                        <a href="contactsAdmin.html" class="fs-5 text-center me-1 text-decoration-none text-dark">
+                        <a href="contactsAdmin.php" class="fs-5 text-center me-1 text-decoration-none text-dark">
                             <i class="bi bi-person-rolodex icon-list"></i>
                             contacts
                         </a>
@@ -65,6 +85,7 @@
                             setting
                         </a>
                       </div>
+
 
                       
                      
@@ -97,7 +118,7 @@
                             <div class="content-left">
                                 <div class="hader-content">
                                     <div class="hader-text">
-                                        <h1>hi janice wingelton !</h1>
+                                        <h1>hi <?php  $user->fullname($id); ?></h1>
                                         <p>
                                             Lorem ipsum dolor sit amet consectetur adipisicing elit. In dolores voluptatum modi laborum
                                              repellat dignissimos? Autem, architecto eligendi qui laboriosam neque 
@@ -202,7 +223,7 @@
                             <div class="content-re">
                                 <div class="cartAdmin">
                                     <div class="imagedash"></div>
-                                    <p>janice wingeltion</p>
+                                    <p><?php $user->fullname($id); ?></p>
                                     <span>admin</span>
                                     <a href="">setting</a>
                                 </div>

@@ -24,8 +24,8 @@ class Sign extends Dbconnect{
         
     
     public function login($email, $pass) {  
-        $pass = md5($pass);  
-        $check = mysqli_query($this->Dbconnect,"SELECT * FROM user WHERE email='$email' and password='$pass'");  
+        $pass = hash('sha256', $pass);   
+        $check = mysqli_query($this->Dbconnecthh->connection,"SELECT * FROM user WHERE email='$email' and password='$pass'");  
         $data = mysqli_fetch_array($check);  
         $result = mysqli_num_rows($check);  
         if ($result == 1) {  
@@ -42,9 +42,9 @@ class Sign extends Dbconnect{
     
 
     public function fullname($id) {  
-        $result = mysqli_query($this->Dbconnect,"SELECT * FROM user WHERE email='$id'");  
+        $result = mysqli_query($this->Dbconnecthh->connection,"SELECT * FROM user WHERE id='$id'");  
         $row = mysqli_fetch_array($result);  
-        echo $row['first_name'];  
+        echo $row['first_name'] ." ". $row['last_name'];  
     }  
     
 

@@ -254,3 +254,93 @@ table th,td{
     color: var(--grebl);
     margin-right: 10px;
 }
+
+.modal-footer> a {
+    padding: 10px 25px ;
+    border-radius: 5px ;
+    font-size: 14px ;
+    text-decoration: none ;
+    color: var(--bl) ;
+    text-transform: capitalize ;
+    background-color: var(--gre) ;
+}
+
+
+@media screen and (min-width: 600px) and  (max-width: 1156px) {
+
+
+    .container-content {
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+    }
+
+
+    .content-left {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .content-re {
+        width: 50%;
+        padding: 10px;
+    }
+
+    .hader-content {
+        width: 100%;
+        padding: 20px;
+        border-radius: 15px;
+        height: auto;
+    }
+
+}
+
+
+@media screen and (max-width: 600px)  {
+
+    .container-content {
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+    }
+
+
+    .content-left {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .content-re {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .hader-content {
+        width: 100%;
+        padding: 20px;
+        border-radius: 15px;
+        height: auto;
+    }
+
+
+
+    .carts {
+        margin-top: 20px;
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .cart {
+        width: 100%;
+        margin: 10px 0 ;
+    }
+
+    .barContact {
+        flex-direction: column;
+    }
+
+    .barContact-re {
+        margin: 20px 0 10px;
+    }
+
+}

@@ -1,3 +1,28 @@
+<?php  
+   session_start();  
+   include_once '../model/model_SignUp.php';  
+
+   $user = new Sign();  
+
+//    if ($user->session())  
+//    {  
+//       header("location: ../Admin/contactsAdmin.php");  
+//    }  
+  
+
+   if ($_SERVER["REQUEST_METHOD"] == "POST"){  
+      $login = $user->login($_REQUEST['email'],$_REQUEST['password']);  
+      if($login){  
+          
+         header("location: ../Admin/contactsAdmin.php");  
+      }
+      else
+      {  
+         echo "Login Failed!";  
+      }  
+   }  
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,8 +42,8 @@
             </div>
             <ul>
                 <li><a href="../index.html">home</a></li>
-                <li><a href="singIn.html">sing in</a></li>
-                <li><a class="btnBoxShadow" href="singUp.html">sing up </a></li>
+                <li><a href="singIn.php">sing in</a></li>
+                <li><a class="btnBoxShadow" href="singUp.php">sing up </a></li>
             </ul>
         </div>
     </nav>
@@ -34,11 +59,12 @@
                 <span> hey!</span>
                 <span> wellcome back</span>
             </div>
-            <form action="">
+
+            <form method="POST">
 
                 <div class="inputUser">
-                    <label for="username">user name</label>
-                    <input type="text" name="username" placeholder="user name">
+                    <label for="email">email</label>
+                    <input type="gmail" name="email" placeholder="email">
                 </div>
 
                 <div class="inputPass">         
@@ -47,11 +73,11 @@
                 </div>
 
 
-                <input type="button" value="sing in" name="singin" class="singin">
+                <input type="submit" value="sing in" name="singin" class="singin">
 
             </form>
 
-            <p class="singup">no account ? <a href="singUp.html">sing up</a> here.</p>
+            <p class="singup">no account ? <a href="singUp.php">sing up</a> here.</p>
         </div>
         
     </div>
